@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         val etAge = findViewById<EditText>(R.id.etAge)
         val btnVerify = findViewById<Button>(R.id.btnVerify)
         val tvStatus = findViewById<TextView>(R.id.tvStatus)
+        val welc = findViewById<TextView>(R.id.welcome)
 
         fun resetVerification() {
             isVerified = false
@@ -29,9 +30,18 @@ class MainActivity : AppCompatActivity() {
                 resources.getColor(android.R.color.holo_red_dark)
             )
         }
+
+        fun setName() {
+            val name = etName.text.toString().trim()
+            if (name==""){
+                welc.text = "Welcome!"
+            }
+            else {welc.text = "Welcome $name!"}
+        }
+        etName.addTextChangedListener { setName() }
+
         etName.addTextChangedListener { resetVerification() }
         etAge.addTextChangedListener { resetVerification() }
-
         btnVerify.setOnClickListener {
             val name = etName.text.toString().trim()
             val ageText = etAge.text.toString().trim()
