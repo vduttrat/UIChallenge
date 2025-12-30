@@ -1,4 +1,6 @@
-#Changes made
+Attempted the UI Challenge given by the App wing.
+
+##Changes made
 
 Changed layout from Linear Layout to Constraint layout
 Changed app into dark mode with minor UI changes (Adding card view etc)
